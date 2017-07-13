@@ -26,6 +26,7 @@ public class LoginPresenterImp1 implements LoginPresenter ,LoginModel.OnLoginFin
 
 
             loginView.setPasswordError(R.string.error_invalid_password);
+            return;
 
         }
 
@@ -33,10 +34,12 @@ public class LoginPresenterImp1 implements LoginPresenter ,LoginModel.OnLoginFin
         if (TextUtils.isEmpty(userName)) {
 
             loginView.setUserNameError(R.string.error_field_required);
+            return;
         } else if (!isEmailValid(userName)) {
 
 
             loginView.setUserNameError(R.string.error_invalid_email);
+            return;
         }
 
         if (cancel) {
